@@ -1,3 +1,12 @@
+#!/usr/bin/env uv
+# /// script
+# requires-python = ">=3.13"
+# dependencies = [
+#     "requests",
+#     "tqdm",
+# ]
+# ///
+
 import argparse
 import hashlib
 import os
