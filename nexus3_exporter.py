@@ -54,7 +54,9 @@ def main():
         if not quiet: print(f"Output directory '{output_dir}' already exists. Please delete it and then re-run the script.")
         abort(1)
 
-    auth = (username, getpass()) if username else None
+    password = os.getenv("NEXUS_PASSWORD", None)
+    if not password:
+        auth = (username, getpass()) if username else None
 
     if "://" not in server_url:
         server_url = "http://" + server_url
